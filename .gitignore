@@ -1,0 +1,6 @@
+node_modules
+/node_modules/puppeteer/*
+dist
+screen-collection.asar
+screen-collection-darwin-x64
+screen-collection-win32-x64

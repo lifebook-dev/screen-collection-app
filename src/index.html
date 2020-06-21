@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SCREEN COLLECTION</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<body class="pt-30">
+<div class="l-section pt-0 pb-20">
+    <div class="l-inner">
+        <h1 class="text-center">SCREEN COLLECTION</h1>
+
+        <div class="accordion mb-20 mb-15">
+            <div class="accordion-title">
+                How to Use
+                <div class="accordion-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="accordion-box">
+                <div class="accordion-box-inner">
+                    <p>1.CSVファイルにスクショを撮りたいページのURL、タイトルを入力してください。</p>
+                    <p>2.記入したCSVファイルを指定してください。</p>
+                    <p>3.スクショの保存先を指定してください。</p>
+                    <p>4.「Take Screenshots!」を押してください。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-md-12 mb-md-10">
+                <div class="box">
+                    <h2 class="ttl-article mb-20">Select CSV File</h2>
+                    <button id="fileSelect" type="button" class="btn btn-default btn-lg btn-block">CSVファイル選択</button>
+                    <p id="selectedfiledisplay" class="display-input mt-10"></p>
+                    <input id="selectedfile" type="hidden" name="selectedfile" value="">
+                </div>
+            </div>
+            <div class="col-6 col-md-12 mb-md-10">
+                <div class="box">
+                    <h2 class="ttl-article mb-20">Select Folder</h2>
+                    <button id="folderSelect" type="button" class="btn btn-default btn-lg btn-block">保存先フォルダ選択</button>
+                    <p id="selectedfolderdisplay" class="display-input mt-10"></p>
+                    <input id="selectedfolder" type="hidden" name="selectedfolder" value="">
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion mb-20 mb-15">
+            <div class="accordion-title">
+                OPTIONS
+                <div class="accordion-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="accordion-box l-inner">
+                <div class="accordion-box-inner row">
+                    <div class="col-6 col-md-12 mb-md-10">
+                        <div class="box">
+                            <h5 class="ttl-paragraph">Select Device</h5>
+                            <select id="selecteddevice" name="selecteddevice" class="formselect">
+                                <option value="pc" selected>PC</option>
+                                <option value="iPhone 8">iPhone 6/7/8</option>
+                                <option value="iPhone 8 Plus">iPhone 6/7/8 Plus</option>
+                                <option value="iPad">iPad</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-12 mb-md-10">
+                        <div class="box">
+                            <h5 class="ttl-paragraph">Basic Authentication</h5>
+                            <input id="basicUser" class="formtext" type="text" name="basicUser" value="" placeholder="user name">
+                            <input id="basicPass" class="formtext mt-10" type="text" name="basicPass" value="" placeholder="password">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="js-button btn btn-m btn-black">Take Screenshots!</button>
+        </div>
+
+        <!-- 表示するモダールウィンドウ -->
+        <div class="refinemodal" id="modal">
+            <div class="refinemodal-wrap">
+                <div class="refinemodal-inner text-center">
+                    <h1 id="runningTitle">Running</h1>
+                    <p id="loadingImage"><img src="./assets/images/common/loading.gif" alt=""></p>
+                    <div id="progressReport" class="refinemodal-section">
+                        <p class="running-info"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="refinemodal-bottom">
+                <div class="refinemodal-bottom-close">閉じる</div>
+            </div>
+            <div class="modal-close"></div>
+        </div>
+        <!-- /表示するモダールウィンドウ -->
+
+    </div>
+</div>
+<script>
+    window.jQuery = window.$ = require('../node_modules/jquery/dist/jquery.min.js');
+</script>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script type="text/javascript" src="./assets/js/common.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript" src="./screen-collection.js"></script>
+</body>
+</html>
+<style>
+    h1{
+        font-size: 42px;
+    }
+    h1, h2, h5, .js-button, .accordion-title{
+        font-family: 'Bangers';
+        letter-spacing: 0.1em;
+    }
+    .display-input{
+        white-space: nowrap;
+        overflow: auto;
+    }
+    @media screen and (min-width: 769px){
+        .btn.btn-default:not(.btn-disabled):hover {
+            padding: 6px 10px;
+        }
+    }
+    .text-link-blank{
+        text-decoration: underline;
+        cursor: pointer;
+        cursor: hand;
+    }
+</style>
